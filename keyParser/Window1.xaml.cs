@@ -42,12 +42,16 @@ namespace keyParser
 		
 		void urlDecBtn_Click(object sender, RoutedEventArgs e)
 		{
-			
+			string beforeStr = this.beforeTb.Text;
+			string ret = URLEncUtils.urlDec(beforeStr);
+			this.afterTb.Text = ret;
 		}
 		
 		void urlEncBtn_Click(object sender, RoutedEventArgs e)
 		{
-			
+			string beforeStr = this.beforeTb.Text;
+			string ret = URLEncUtils.urlEnc(beforeStr);
+			this.afterTb.Text = ret;
 		}
 	}
 }
