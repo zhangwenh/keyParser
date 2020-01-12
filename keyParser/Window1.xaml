@@ -3,8 +3,12 @@
 	x:Class="keyParser.Window1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	Title="keyParser"
 	Width="849"
-	Height="499">
-	<Grid>
+	Height="499"
+	HorizontalContentAlignment="Left"
+	ResizeMode="NoResize">
+	<Grid
+		Height="466"
+		Width="840">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition
 				Width="*" />
@@ -15,66 +19,90 @@
 			RenderTransformOrigin="0.5,0.5"
 			x:Name="encBtn"
 			Click="encBtn_Click"
-			Content="encrypt"
+			Content="Encrypt"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Margin="4,204,0,0"
-			Width="207"
+			Margin="6,205,0,0"
+			Width="120"
 			Height="60" />
 		<Button
 			x:Name="decBtn"
 			Click="decBtn_Click"
-			Content="decrypt"
-			Grid.Column="0"
-			Grid.Row="0"
-			HorizontalAlignment="Right"
-			VerticalAlignment="Top"
-			Margin="0,204,426,0"
-			Width="202"
-			Height="60" />
-		<TextBox
-			Width="825"
-			Height="197"
+			Content="Decrypt"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Margin="5,8,0,0"
-			x:Name="beforeTb"
-			Text="" />
+			Margin="126,205,0,0"
+			Width="120"
+			Height="60" />
 		<TextBox
-			Width="825"
-			Height="197"
+			x:Name="beforeTb"
+			Text=""
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="-2,-1,0,0"
+			Width="840"
+			Height="205" />
+		<TextBox
 			x:Name="afterTb"
 			Grid.Column="0"
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Margin="5,264,0,0" />
+			Margin="-2,264,0,0"
+			Width="840"
+			Height="202" />
 		<Button
 			RenderTransformOrigin="0.5,0.5"
 			x:Name="urlEncBtn"
+			Content="URLEncode"
+			Click="urlEncBtn_Click"
 			Grid.Column="0"
 			Grid.Row="0"
-			HorizontalAlignment="Right"
+			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Margin="0,204,211,0"
-			Width="207"
-			Height="60"
-			Content="URLEncode"
-			Click="urlEncBtn_Click" />
+			Margin="299,204,0,0"
+			Width="120"
+			Height="60" />
 		<Button
 			x:Name="urlDecBtn"
+			Click="urlDecBtn_Click"
+			Content="URLDecode"
 			Grid.Column="0"
 			Grid.Row="0"
-			HorizontalAlignment="Right"
+			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Margin="0,204,9,0"
-			Width="202"
+			Margin="419,204,0,0"
+			Width="118"
+			Height="60" />
+		<Button
+			RenderTransformOrigin="0.5,0.5"
+			x:Name="upperBtn"
+			Content="Upper"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="590,204,0,0"
+			Width="120"
 			Height="60"
-			Click="urlDecBtn_Click"
-			Content="URLDecode" />
+			Click="upperBtn_Click" />
+		<Button
+			RenderTransformOrigin="0.5,0.5"
+			x:Name="lowerBtn"
+			Content="Lower"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="710,204,0,0"
+			Width="120"
+			Height="60"
+			Click="lowerBtn_Click" />
 	</Grid>
 </Window>

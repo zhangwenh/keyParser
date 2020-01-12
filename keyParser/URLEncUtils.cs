@@ -16,9 +16,9 @@ namespace keyParser
 	/// <summary>
 	/// Description of EncodeUtils.
 	/// </summary>
-	public class URLEncUtils
+	public class StrUtils
 	{
-		public URLEncUtils()
+		public StrUtils()
 		{
 		}
 		
@@ -31,7 +31,7 @@ namespace keyParser
         {  
             try  
             {
-            	return HttpUtility.UrlEncode(str);
+            	return upper(HttpUtility.UrlEncode(str,System.Text.Encoding.UTF8));//.Replace("+", "%20")
             }
             catch
             {
@@ -48,12 +48,36 @@ namespace keyParser
         {  
             try  
             {
-            	return HttpUtility.UrlDecode(str);
+            	return upper(HttpUtility.UrlDecode(str,System.Text.Encoding.UTF8));
             }
             catch
             {
                 return str;  
             }
-        }  
+        }
+        
+        public static string upper(string str)  
+        {  
+            try  
+            {
+            	return str.ToUpper();
+            }
+            catch
+            {
+                return str;  
+            }
+        }
+        
+        public static string lower(string str)  
+        {  
+            try  
+            {
+            	return str.ToLower();
+            }
+            catch
+            {
+                return str;  
+            }
+        }
 	}
 }
