@@ -46,14 +46,15 @@ namespace keyParser
 		void urlDecBtn_Click(object sender, RoutedEventArgs e)
 		{
 			string beforeStr = getRTBValue(this.beforeTb);
-			string ret = StrUtils.urlDec(beforeStr);
+			string ret = StrUtils.urlDec(beforeStr,false);
 			this.afterTb.Text = ret;
 		}
 		
 		void urlEncBtn_Click(object sender, RoutedEventArgs e)
 		{
 			string beforeStr = getRTBValue(this.beforeTb);
-			string ret = StrUtils.urlEnc(beforeStr);
+			string ret = StrUtils.urlEnc(beforeStr,false);
+			ret = ret.Replace("%0d%0a","%0a");
 			this.afterTb.Text = ret;
 		}
 		

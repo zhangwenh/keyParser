@@ -26,12 +26,17 @@ namespace keyParser
         /// URLEncode
         /// </summary>  
         /// <param name="str">待encode的字符串</param>  
+        /// <param name="upperFlag">大写标志</param>  
         /// <returns>返回encode后的字符串，失败返回源串</returns>  
-        public static string urlEnc(string str)  
+        public static string urlEnc(string str, Boolean upperFlag)  
         {  
             try  
             {
-            	return upper(HttpUtility.UrlEncode(str,System.Text.Encoding.UTF8));//.Replace("+", "%20")
+            	string ret = HttpUtility.UrlEncode(str,System.Text.Encoding.UTF8);
+            	if(upperFlag){
+            		ret = upper(ret);
+            	}
+            	return ret;//.Replace("+", "%20")
             }
             catch
             {
@@ -44,11 +49,15 @@ namespace keyParser
         /// </summary>  
         /// <param name="str">待decode的字符串</param>  
         /// <returns>返回decode后的字符串，失败返回源串</returns>  
-        public static string urlDec(string str)  
+        public static string urlDec(string str, Boolean upperFlag)  
         {  
             try  
             {
-            	return upper(HttpUtility.UrlDecode(str,System.Text.Encoding.UTF8));
+            	string ret = HttpUtility.UrlDecode(str,System.Text.Encoding.UTF8);
+            	if(upperFlag){
+            		ret = upper(ret);
+            	}
+            	return ret;
             }
             catch
             {
