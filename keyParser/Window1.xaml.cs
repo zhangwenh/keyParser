@@ -8,6 +8,8 @@
  */
 using System;
 using System.Windows;
+using System.Windows.Documents;
+using System.Windows.Controls;
 
 namespace keyParser
 {
@@ -22,19 +24,20 @@ namespace keyParser
 		{
 			InitializeComponent();
 		}
+		string getRTBValue(RichTextBox rtb)
+		{
+			TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+			return textRange.Text.TrimEnd("\r\n".ToCharArray());
+		}
 		void encBtn_Click(object sender, RoutedEventArgs e)
 		{
-			string beforeStr = this.beforeTb.Text;
-//			string ret = Base64Helper.Base64Encode(beforeStr);
-//			string ret = DesUtils.EncodeDES(beforeStr,KEY_8);
+			string beforeStr = getRTBValue(this.beforeTb);
 			string ret = DesUtilsEx.encrypt(beforeStr,KEY_8);
 			this.afterTb.Text = ret;
 		}
 		void decBtn_Click(object sender, RoutedEventArgs e)
 		{
-			string beforeStr = this.beforeTb.Text;
-//			string ret = Base64Helper.Base64Decode(beforeStr);
-//			string ret = DesUtils.DecodeDES(beforeStr,KEY_8);
+			string beforeStr = getRTBValue(this.beforeTb);
 			string ret = DesUtilsEx.decrypt(beforeStr,KEY_8);
 			this.afterTb.Text = ret;
 		}
@@ -42,28 +45,28 @@ namespace keyParser
 		
 		void urlDecBtn_Click(object sender, RoutedEventArgs e)
 		{
-			string beforeStr = this.beforeTb.Text;
+			string beforeStr = getRTBValue(this.beforeTb);
 			string ret = StrUtils.urlDec(beforeStr);
 			this.afterTb.Text = ret;
 		}
 		
 		void urlEncBtn_Click(object sender, RoutedEventArgs e)
 		{
-			string beforeStr = this.beforeTb.Text;
+			string beforeStr = getRTBValue(this.beforeTb);
 			string ret = StrUtils.urlEnc(beforeStr);
 			this.afterTb.Text = ret;
 		}
 		
 		void upperBtn_Click(object sender, RoutedEventArgs e)
 		{
-			string beforeStr = this.beforeTb.Text;
+			string beforeStr = getRTBValue(this.beforeTb);
 			string ret = StrUtils.upper(beforeStr);
 			this.afterTb.Text = ret;
 		}
 		
 		void lowerBtn_Click(object sender, RoutedEventArgs e)
 		{
-			string beforeStr = this.beforeTb.Text;
+			string beforeStr = getRTBValue(this.beforeTb);
 			string ret = StrUtils.lower(beforeStr);
 			this.afterTb.Text = ret;
 		}
