@@ -31,6 +31,24 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="frs-1.0-SNAPSHOT">
+      <HintPath>dll\frs-1.0-SNAPSHOT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets">
+      <HintPath>dll\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core">
+      <HintPath>dll\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security">
+      <HintPath>dll\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util">
+      <HintPath>dll\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime">
+      <HintPath>dll\IKVM.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -69,9 +87,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Base64Helper.cs" />
+    <Compile Include="ConfigTools.cs" />
     <Compile Include="DesUtils.cs" />
     <Compile Include="DesUtilsEx.cs" />
-    <Compile Include="URLEncUtils.cs" />
+    <Compile Include="StrUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\WPFAssemblyInfo.cs" />
     <Compile Include="TDESUtils.cs" />
